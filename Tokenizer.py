@@ -25,6 +25,6 @@ def tokenize(input):
     
     return tokenized
 
-# Fun test case
+# To Test:
 sentence = "sOmeWHeRe oveR The RaiNBow"
 print(tokenize(sentence))
