@@ -4,20 +4,26 @@ def tokenize(input):
     swap = ["\n", "\t"]
     ignore = ["#"]
 
+    # Add spaces around punctuation
     for marker in punctuation:
-        input = input.replace(marker, " " + marker)
+        input = input.replace(marker, " " + marker + " ")
 
+    # Replace newline and tab characters with spaces
     for character in swap:
         input = input.replace(character, " ")
 
+    # Convert to lowercase
     input = input.lower()
 
-    input = input.split(" ")
+    # Split the input into tokens
+    input = input.split()
 
+    # Ignore certain characters and remove empty tokens
     for token in input:
-        if token not in ignore:
+        if token and token not in ignore:
             tokenized.append(token)
-    return(tokenized)
+    
+    return tokenized
 
 sentence = "This is a sample sentence."
 print(tokenize(sentence))
